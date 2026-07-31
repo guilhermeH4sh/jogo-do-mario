@@ -1,4 +1,6 @@
-# 🍄 Mario Jump Game (8-Bit Arcade)
+# Mario Jump Game (8-Bit Arcade)
+
+Acesse o game: https://guilhermeh4sh.github.io/jogo-do-mario/
 
 Um jogo de corrida infinita retrô inspirado no clássico **Super Mario Bros**, desenvolvido com **HTML5, CSS3 e JavaScript**.
 
