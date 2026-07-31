@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.game-board {
+    width: 100%;
+    height: 500px;
+    border-bottom: 15px solid rgb(35, 160, 35);
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(#87CEEB, #E0F6FF);
+}
+
+.pipe {
+    position: absolute;
+    bottom: 0;
+    width: 80px;
+    animation: pipe-animation 1.5s infinite linear;
+    z-index: 2;
+}
+
+.mario {
+    width: 150px;
+    position: absolute;
+    bottom: 0px;
+    z-index: 2;
+}
+
+.jump {
+    animation: jump 500ms;
+}
+
+.clouds {
+    position: absolute;
+    width: 550px;
+    animation: clouds-animation 20s infinite linear;
+    z-index: 1;
+}
+
+.score {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 8px 14px;
+    border: 3px solid #fff;
+    border-radius: 0px;
+    font-family: 'Press Start 2P', cursive, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    z-index: 5;
+    box-shadow: 3px 3px 0px #000;
+}
+
+.game-over-screen {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    z-index: 10;
+}
+
+.game-over-title {
+    font-family: 'Press Start 2P', cursive, sans-serif;
+    font-size: 36px;
+    color: #e52521;
+    text-shadow: 4px 4px 0px #000;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+/* Botão RESTART Pixel Art Amarelo Mario */
+.restart-btn {
+    font-family: 'Press Start 2P', cursive, sans-serif;
+    font-size: 16px;
+    padding: 16px 32px;
+    background-color: #fbd000;
+    color: #000000;
+    border: 4px solid #000000;
+    border-radius: 0px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    
+    /* Efeito Bisel Pixelado Amarelo com Sombra à Esquerda */
+    box-shadow: 
+        inset -4px 4px 0px #fff282,
+        inset 4px -4px 0px #b39400,
+        -6px 6px 0px #000000;
+    
+    transition: none;
+    user-select: none;
+}
+
+.restart-btn:hover {
+    background-color: #ffdf43;
+    box-shadow: 
+        inset -4px 4px 0px #ffffff,
+        inset 4px -4px 0px #c9a600,
+        -8px 8px 0px #000000;
+    transform: translate(2px, -2px);
+}
+
+.restart-btn:active {
+    background-color: #dca700;
+    box-shadow: 
+        inset 4px -4px 0px #fff282,
+        inset -4px 4px 0px #826c00,
+        -2px 2px 0px #000000;
+    transform: translate(-4px, 4px);
+}
+
+@keyframes clouds-animation {
+    from {
+        right: -550px;
+    }
+
+    to {
+        right: 100%;
+    }
+}
+
+@keyframes jump {
+    0% {
+        bottom: 0px;
+    }
+
+    40% {
+        bottom: 180px;
+    }
+
+    50% {
+        bottom: 180px;
+    }
+
+    60% {
+        bottom: 180px;
+    }
+
+    100% {
+        bottom: 0px;
+    }
+}
+
+@keyframes pipe-animation {
+    from {
+        right: -80px;
+    }
+
+    to {
+        right: 100%;
+    }
+}
